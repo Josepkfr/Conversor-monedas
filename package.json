@@ -2,7 +2,7 @@
   "name": "conversor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://josepkfr.github.io/Conversor-monedas",
+  "homepage": "https://josepkfr.github.io/Conversor-monedas/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",

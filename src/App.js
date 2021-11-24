@@ -48,33 +48,35 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="card">
-        <h1>conversion entre monedas</h1>
-        <div className="flex-container">
-          <CurrencySelector
-            onChange={(e) => setoriginCurrency(e.target.value)}
-            title={`Origen: ${originCurrency}`}
-            rates={rates}
+    <div id="root">
+      <div className="container">
+        <div className="card">
+          <h1>conversion entre monedas</h1>
+          <div className="flex-container">
+            <CurrencySelector
+              onChange={(e) => setoriginCurrency(e.target.value)}
+              title={`Origen: ${originCurrency}`}
+              rates={rates}
+            />
+            <CurrencySelector
+              onChange={(e) => settargetCurrency(e.target.value)}
+              title={`Destino: ${targetCurrency}`}
+              rates={rates}
+            />
+          </div>
+          <input
+            onChange={(e) => setoriginalAmount(e.target.value)}
+            type="number"
+            className="form-control"
+            placeholder="cantidad en centavos"
           />
-          <CurrencySelector
-            onChange={(e) => settargetCurrency(e.target.value)}
-            title={`Destino: ${targetCurrency}`}
-            rates={rates}
-          />
+          {finalAmount && <p>El resultado es: {finalAmount}</p>}
+          {targetCurrency && originCurrency && (
+            <button onClick={convert} className="app-button">
+              Convertir
+            </button>
+          )}
         </div>
-        <input
-          onChange={(e) => setoriginalAmount(e.target.value)}
-          type="number"
-          className="form-control"
-          placeholder="cantidad en centavos"
-        />
-        {finalAmount && <p>El resultado es: {finalAmount}</p>}
-        {targetCurrency && originCurrency && (
-          <button onClick={convert} className="app-button">
-            Convertir
-          </button>
-        )}
       </div>
     </div>
   );
